@@ -1,0 +1,91 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Introducir objetos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Introducir objetos</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <ion-item>
+      <ion-label>Nombre del producto: </ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Descripcion: </ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Precio: </ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-list>
+      <ion-radio-group>
+        <ion-list-header>
+          <ion-label>Categoria: </ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Tecnologia</ion-label>
+          <ion-radio slot="start" value="tecnologia"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Hogar</ion-label>
+          <ion-radio slot="start" value="hogar"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Inmobiliaria</ion-label>
+          <ion-radio slot="start" value="inmobiliaria"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Motor</ion-label>
+          <ion-radio slot="start" value="motor"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+      <div id="tecnologia">
+        <ion-list>
+          <ion-radio-group>
+            <ion-list-header>
+              <ion-label>Estado: </ion-label>
+            </ion-list-header>
+            <ion-item>
+              <ion-label>Perfecto</ion-label>
+              <ion-radio slot="start" value="perfecto"></ion-radio>
+            </ion-item>
+            <ion-item>
+              <ion-label>Usado</ion-label>
+              <ion-radio slot="start" value="usado"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </ion-list>
+      </div>
+      <div id="inmobiliaria">
+        <ion-item>
+          <ion-input placeholder="Metros cuadrados: " type="number"></ion-input>
+          <ion-input placeholder="Numero de baños: " type="number"></ion-input>
+          <ion-input placeholder="Nuemro de habitaciones" type="number"></ion-input>
+          <ion-input placeholder="Localidad"></ion-input>
+        </ion-item>
+      </div>
+      <div id="motor">
+        <ion-item>
+          <ion-label>Coche</ion-label>
+          <ion-radio slot="start" value="coche"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Moto</ion-label>
+          <ion-radio slot="start" value="moto"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-input placeholder="Km: " type="number"></ion-input>
+          <ion-input placeholder="Año: " type="number"></ion-input>
+        </ion-item>
+      </div>
+  </div>
+</ion-content>
