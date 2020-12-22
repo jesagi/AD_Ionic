@@ -11,6 +11,22 @@ export class HomePage {
   hogOculto : boolean = false;
   InmOculto : boolean = false;
   motOculto : boolean = false;
+  nombre : string;
+  descripcion : string;
+  precio : number;
+
+  productos: any[] = [
+    {
+      "nombre" : "movil",
+      "descripcion" : "samsung galaxy",
+      "precio" : 300
+    },
+    {
+      "nombre" : "silla",
+      "descripcion" : "tres patas",
+      "precio" : 20
+    }
+  ]
 
   TecnoOculto() : void {
     this.tecOculto = true;
