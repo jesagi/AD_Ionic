@@ -27,53 +27,48 @@
       <ion-input type="number" [(ngModel)]="precio"></ion-input>
     </ion-item>
     <ion-list>
+      <ion-list-header>
+        <ion-label>Categoria: </ion-label>
+      </ion-list-header>
+
+      <ion-button expand="block" (click)="MostrarTecno()">Tecnologia</ion-button>
+
+      <ion-button expand="block">Hogar</ion-button>
+
+      <ion-button expand="block" (click)="MostrarHogar()">Inmobiliaria</ion-button>
+
+      <ion-button expand="block" (click)="MostrarMotor()">Motor</ion-button>
+    </ion-list>
+
+    <div id="tecnologia" *ngIf="tecOculto == false">
+      <ion-list>
+        <ion-radio-group>
+          <ion-list-header>
+            <ion-label>Estado: </ion-label>
+          </ion-list-header>
+          <ion-item>
+            <ion-label>Perfecto</ion-label>
+            <ion-radio slot="start" value="perfecto"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Usado</ion-label>
+            <ion-radio slot="start" value="usado"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-list>
+    </div>
+
+    <div id="inmobiliaria" *ngIf="inmOculto==false">
+      <ion-list>
+        <ion-input placeholder="Metros cuadrados:" type="number"></ion-input>
+        <ion-input placeholder="Numero de baños:" type="number"></ion-input>
+        <ion-input placeholder="Numero de habitaciones:" type="number"></ion-input>
+        <ion-input placeholder="Localidad:"></ion-input>
+      </ion-list>
+    </div>
+
+    <div id="motor" *ngIf="motOculto==false">
       <ion-radio-group>
-        <ion-list-header>
-          <ion-label>Categoria: </ion-label>
-        </ion-list-header>
-        <ion-item>
-          <ion-label>Tecnologia</ion-label>
-          <ion-radio slot="start" value="tecnologia" (click)="TecnoOculto()"></ion-radio>
-        </ion-item>
-        <ion-item>
-          <ion-label>Hogar</ion-label>
-          <ion-radio slot="start" value="hogar" (click)="HogarOculto()"></ion-radio>
-        </ion-item>
-        <ion-item>
-          <ion-label>Inmobiliaria</ion-label>
-          <ion-radio slot="start" value="inmobiliaria" (click)="InmoOculto()"></ion-radio>
-        </ion-item>
-        <ion-item>
-          <ion-label>Motor</ion-label>
-          <ion-radio slot="start" value="motor" (click)="MototOculto()"></ion-radio>
-        </ion-item>
-      </ion-radio-group>
-      <div id="tecnologia" *ngif = "tecOculto==false">
-        <ion-list>
-          <ion-radio-group>
-            <ion-list-header>
-              <ion-label>Estado: </ion-label>
-            </ion-list-header>
-            <ion-item>
-              <ion-label>Perfecto</ion-label>
-              <ion-radio slot="start" value="perfecto"></ion-radio>
-            </ion-item>
-            <ion-item>
-              <ion-label>Usado</ion-label>
-              <ion-radio slot="start" value="usado"></ion-radio>
-            </ion-item>
-          </ion-radio-group>
-        </ion-list>
-      </div>
-      <div id="inmobiliaria" *ngif = "inmOculto==false">
-        <ion-item>
-          <ion-input placeholder="Metros cuadrados: " type="number"></ion-input>
-          <ion-input placeholder="Numero de baños: " type="number"></ion-input>
-          <ion-input placeholder="Nuemro de habitaciones" type="number"></ion-input>
-          <ion-input placeholder="Localidad"></ion-input>
-        </ion-item>
-      </div>
-      <div id="motor" *ngif = "motOculto==false">
         <ion-item>
           <ion-label>Coche</ion-label>
           <ion-radio slot="start" value="coche"></ion-radio>
@@ -82,15 +77,22 @@
           <ion-label>Moto</ion-label>
           <ion-radio slot="start" value="moto"></ion-radio>
         </ion-item>
-        <ion-item>
-          <ion-input placeholder="Km: " type="number"></ion-input>
-          <ion-input placeholder="Año: " type="number"></ion-input>
-        </ion-item>
-      </div>
-      <div *ngFor="let item of productos">
-        <ion-label>{{item.nombre}}</ion-label>
-        <ion-label>{{item.descripcion}}</ion-label>
-        <ion-label>{{item.precio}}</ion-label>
-      </div>
+      </ion-radio-group>
+      <ion-item>
+        <ion-input placeholder="Km: " type="number"></ion-input>
+        <ion-input placeholder="Año: " type="number"></ion-input>
+      </ion-item>
+    </div>
+
+    <div *ngFor="let item of productos" id="list">
+      <br>
+      <ion-label>NOMBRE: {{item.nombre}} </ion-label>
+      <br>
+      <ion-label>DESCRIPCION: {{item.descripcion}} </ion-label>
+      <br>
+      <ion-label>PRECIO: {{item.precio}} €</ion-label>
+      <br>
+    </div>
+
   </div>
 </ion-content>

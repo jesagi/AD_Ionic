@@ -7,10 +7,11 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  tecOculto : boolean = false;
-  hogOculto : boolean = false;
-  InmOculto : boolean = false;
-  motOculto : boolean = false;
+  tecOculto : boolean = true;
+  inmOculto : boolean = true;
+  motOculto : boolean = true;
+
+
   nombre : string;
   descripcion : string;
   precio : number;
@@ -28,12 +29,22 @@ export class HomePage {
     }
   ]
 
-  TecnoOculto() : void {
+  MostrarTecno() : void {
+    this.tecOculto = false;
+    this.inmOculto = true;
+    this.motOculto = true;
+  }
+  MostrarHogar() : void {
     this.tecOculto = true;
-    this.hogOculto = false; 
-    this.InmOculto = false;
+    this.inmOculto = false;
+    this.motOculto = true;
+  }
+  MostrarMotor() : void {
+    this.tecOculto = true;
+    this.inmOculto = true;
     this.motOculto = false;
   }
+  /*
   HogarOculto() : void {
     this.tecOculto = false;
     this.hogOculto = true; 
@@ -51,7 +62,7 @@ export class HomePage {
     this.hogOculto = false; 
     this.InmOculto = false;
     this.motOculto = true; 
-  }
+  }*/
 
   constructor() {}
 
