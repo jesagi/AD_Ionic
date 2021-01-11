@@ -11,6 +11,18 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'articulos/:id',
+    loadChildren: () => import('./articulos/articulos.module').then( m => m.ArticulosPageModule)
+  },
+  {
+    path: 'listaarticulos',
+    loadChildren: () => import('./listaarticulos/listaarticulos.module').then( m => m.ListaarticulosPageModule)
+  },
+  {
+    path: 'anyadirarticulos',
+    loadChildren: () => import('./anyadirarticulos/anyadirarticulos.module').then( m => m.AnyadirarticulosPageModule)
+  },
 ];
 
 @NgModule({
