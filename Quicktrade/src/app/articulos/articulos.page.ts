@@ -19,7 +19,7 @@ export class ArticulosPage implements OnInit {
 
     let ref = this._articuloService.getSingleArticulo(this.key);
 
-    ref.once("value", snapshot =>{
+    ref.once("value").then(snapshot =>{
       snapshot.forEach(child => {
         let value = child.val();
         console.log(child.val());
