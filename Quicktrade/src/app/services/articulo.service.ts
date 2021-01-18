@@ -1,11 +1,12 @@
 import { Injectable } from "@angular/core";
+import { AngularFireDatabase } from "@angular/fire/database";
 import { IArticulo, IInmobiliaria, IMotor, ITecnologia } from "../interfaces";
 
 @Injectable()
 
 export class ArticuloService{
 
-    articulos: (IArticulo | ITecnologia | IInmobiliaria | IMotor)[] = [
+    /*articulos: (IArticulo | ITecnologia | IInmobiliaria | IMotor)[] = [
         {
           "id": 1,
           "nombre": "Movil",
@@ -20,7 +21,7 @@ export class ArticuloService{
           "descripcion": "Harley",
           "precio": 10000,
           "tipo": "Motor",
-          "vehiculo": "Coche",
+          "vehiculo": "Moto ",
           "km": 200,
           "anyo": 2020
         }
@@ -31,6 +32,15 @@ export class ArticuloService{
     }
     getArticulo(id : number) : (IArticulo | ITecnologia | IInmobiliaria | IMotor){
         return this.articulos.find(x => x.id == id);
+    }*/
+
+    constructor(private _db: AngularFireDatabase){
+
+    }
+
+    setArticulos(articulo: IArticulo){
+      let ref = this._db.database.ref("Articulos");
+      ref.push(articulo);
     }
 
 }
