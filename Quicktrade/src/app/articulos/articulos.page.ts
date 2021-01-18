@@ -10,14 +10,23 @@ import { ArticuloService } from '../services/articulo.service';
 })
 export class ArticulosPage implements OnInit {
 
-  id : number;
+  key : string;
   articulo : IArticulo | ITecnologia | IInmobiliaria | IMotor;
 
   constructor(private _activatedRoute: ActivatedRoute, private _articuloService : ArticuloService) { }
 
   ngOnInit() {
-    this.id =+ this._activatedRoute.snapshot.paramMap.get('id');
-    this.articulo = this._articuloService.getArticulo(this.id);
+
+    let ref = this._articuloService.getSingleArticulo(this.key);
+
+    ref.once("value", snapshot =>{
+      snapshot.forEach(child => {
+        let value = child.val();
+        console.log(child.val());
+        this.articulo = value;
+      })
+    })
+    //this.articulo = this._articuloService.getArticulo(this.id);
     console.log("He recibido " + this.articulo.nombre);
   }
 

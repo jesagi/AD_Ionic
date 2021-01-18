@@ -16,7 +16,17 @@ export class ListaarticulosPage implements OnInit {
   }
 
   ngOnInit() {
-    this.articulos = this._articuloService.getArticulos();
+    //this.articulos = this._articuloService.getArticulos();
+    let ref = this._articuloService.getArticulos();
+
+    ref.on("value", snapshot =>{
+      snapshot.forEach(child => {
+        let value = child.val();
+        console.log(child.val());
+        this.articulos.push(value);
+      })
+    })
   }
+  
 
 }

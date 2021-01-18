@@ -5,13 +5,15 @@
 export const environment = {
   production: false,
   firebaseConfig: {
-    apiKey: "AIzaSyCMRYemKri2la58ZGZJ1Hov1iPgEDLN0fA",
-    authDomain: "articulos-6b92c.firebaseapp.com",
-    projectId: "articulos-6b92c",
-    storageBucket: "articulos-6b92c.appspot.com",
-    messagingSenderId: "366317910266",
-    appId: "1:366317910266:web:d75cca157ccfcb6cdef143"
+    apiKey: "AIzaSyAtaWRl2-Mso7MJT49dy69M39adP70G-CQ",
+    authDomain: "quicktrade-53570.firebaseapp.com",
+    databaseURL: "https://quicktrade-53570-default-rtdb.firebaseio.com",
+    projectId: "quicktrade-53570",
+    storageBucket: "quicktrade-53570.appspot.com",
+    messagingSenderId: "659838073488",
+    appId: "1:659838073488:web:22391f3f69bac8e704b615"
   }
+
 
 };
 

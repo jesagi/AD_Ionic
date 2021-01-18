@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastController } from '@ionic/angular';
 import { IArticulo, IInmobiliaria, IMotor, ITecnologia } from '../interfaces';
+import { ArticuloService } from '../services/articulo.service';
 
 @Component({
   selector: 'app-anyadirarticulos',
@@ -73,7 +74,7 @@ export class AnyadirarticulosPage implements OnInit {
   }
 
 
-  constructor(public toastController: ToastController) { }
+  constructor(public toastController: ToastController, private _articuloService : ArticuloService) { }
 
   async presentToast() {
     const toast = await this.toastController.create({
@@ -85,25 +86,28 @@ export class AnyadirarticulosPage implements OnInit {
 
   insertar() {
     if (this.tipo == "Tecnologia") {
-      this.productos.push({
+      let producto: ITecnologia={
         "id": this.productos.length + 1,
         "nombre": this.nombre,
         "descripcion": this.descripcion,
         "precio": this.precio,
         "tipo": this.tipo,
         "estado": this.estado,
-      })
+      };
+      this._articuloService.setArticulos(producto)
+      this.presentToast();
     } else if (this.tipo == "Hogar") {
-      this.productos.push({
+      let producto: IArticulo={
         "id": this.productos.length + 1,
         "nombre": this.nombre,
         "descripcion": this.descripcion,
         "precio": this.precio,
         "tipo": this.tipo,
-      })
+      }
+      this._articuloService.setArticulos(producto)
       this.presentToast();
     } else if (this.tipo == "Inmobiliaria") {
-      this.productos.push({
+      let producto: IInmobiliaria={
         "id": this.productos.length + 1,
         "nombre": this.nombre,
         "descripcion": this.descripcion,
@@ -113,10 +117,11 @@ export class AnyadirarticulosPage implements OnInit {
         "nBanyos": this.nBanyos,
         "nHabitaciones": this.nHabitaciones,
         "localidad": this.localidad,
-      })
+      }
+      this._articuloService.setArticulos(producto)
       this.presentToast();
-    } else if (this.tipo == "Motord") {
-      this.productos.push({
+    } else if (this.tipo == "Motor") {
+      let producto: IMotor={
         "id": this.productos.length + 1,
         "nombre": this.nombre,
         "descripcion": this.descripcion,
@@ -125,7 +130,8 @@ export class AnyadirarticulosPage implements OnInit {
         "vehiculo": this.vehiculo,
         "km": this.km,
         "anyo": this.anyo,
-      })
+      }
+      this._articuloService.setArticulos(producto)
       this.presentToast();
     }
   }

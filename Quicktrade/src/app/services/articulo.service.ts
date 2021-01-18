@@ -35,7 +35,17 @@ export class ArticuloService{
     }*/
 
     constructor(private _db: AngularFireDatabase){
+      
+    }
 
+    getSingleArticulo(key): firebase.default.database.Reference{
+      let ref = this._db.database.ref(key)
+      return ref;
+    }
+
+    getArticulos(): firebase.default.database.Reference{
+      let ref= this._db.database.ref("Articulos");
+      return ref;
     }
 
     setArticulos(articulo: IArticulo){
