@@ -11,21 +11,33 @@ export class ListaarticulosPage implements OnInit {
 
   articulos : (IArticulo | ITecnologia | IInmobiliaria | IMotor)[];
 
+  
+
   constructor(private _articuloService : ArticuloService) {
 
   }
 
   ngOnInit() {
-    //this.articulos = this._articuloService.getArticulos();
+    let objeto = {
+      id: 4,
+      nombre: "string",
+      descripcion: "string",
+      precio: 3,
+      tipo: "string",
+    }
+    
     let ref = this._articuloService.getArticulos();
+    console.log(objeto);
+    this.articulos.push(objeto);
 
+/*
     ref.on("value", snapshot =>{
       snapshot.forEach(child => {
         let value = child.val();
         console.log(child.val());
         this.articulos.push(value);
       })
-    })
+    })*/
   }
   
 
