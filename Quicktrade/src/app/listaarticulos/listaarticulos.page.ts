@@ -9,7 +9,7 @@ import { ArticuloService } from '../services/articulo.service';
 })
 export class ListaarticulosPage implements OnInit {
 
-  articulos : (IArticulo | ITecnologia | IInmobiliaria | IMotor) = [];
+  articulos = [];
 
   
 
