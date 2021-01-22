@@ -16,8 +16,9 @@
       <ion-card-content>
         {{item.descripcion}}
       </ion-card-content>
+      <ion-input placeholder="Puntuacion: " type="number" [(ngModel)]="puntuacion"></ion-input>
        <ion-item>
-        <ion-button fill="outline" slot="end" [routerLink]="['/articulos/',item.id]">View</ion-button>
+        <ion-button fill="outline" slot="end" (click)="enviar(item.id)">Enviar</ion-button>
       </ion-item>
      
     </ion-card>

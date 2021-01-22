@@ -29,5 +29,6 @@ export class ArticulosPage implements OnInit {
     //this.articulo = this._articuloService.getArticulo(this.id);
     console.log("He recibido " + this.articulo.nombre);
   }
+  
 
 }

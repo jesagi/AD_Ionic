@@ -42,6 +42,10 @@ export class ArticuloService{
       let ref = this._db.database.ref(key)
       return ref;
     }
+    getSingleVenta(id): firebase.default.database.Reference{
+      let ref = this._db.database.ref("Ventas")
+      return ref;
+    }
 
     getArticulos(): firebase.default.database.Reference{
       let ref= this._db.database.ref("Articulos");
@@ -51,6 +55,10 @@ export class ArticuloService{
     getVentas(): firebase.default.database.Reference{
       let ref= this._db.database.ref("Mis_Ventas");
       return ref;
+    }
+    setVentas(envio){
+      let ref = this._db.database.ref("Envios");
+      ref.push(envio);
     }
 
     setArticulos(articulo: IArticulo){
