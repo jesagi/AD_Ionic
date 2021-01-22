@@ -22,7 +22,11 @@ const routes: Routes = [
   {
     path: 'anyadirarticulos',
     loadChildren: () => import('./anyadirarticulos/anyadirarticulos.module').then( m => m.AnyadirarticulosPageModule)
+  },  {
+    path: 'ventas',
+    loadChildren: () => import('./ventas/ventas.module').then( m => m.VentasPageModule)
   },
+
 ];
 
 @NgModule({

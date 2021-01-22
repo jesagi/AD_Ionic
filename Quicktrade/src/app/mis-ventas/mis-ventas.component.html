@@ -1,0 +1,12 @@
+<div *ngFor="let item of mis_ventas" id="list">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>{{item.tipo}}</ion-card-subtitle>
+      <ion-card-title>{{item.nombre}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{item.descripcion}}
+    </ion-card-content>
+  </ion-card>
+</div>
